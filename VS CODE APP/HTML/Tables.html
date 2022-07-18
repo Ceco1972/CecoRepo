@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TABLES</title>
+        <style>
+            table
+            {
+                background-color: #ccc;
+                border: 2px solid black;
+                border-collapse: collapse;
+            }
+
+            tr, th, td
+            {
+                border: 2px solid black;
+                padding: 3px;
+            }
+            th
+            {
+                font-size: 1.2em;
+                font-family: Arial;
+            }
+            td
+            {
+                font-family: Arial;
+            }
+            .dark
+            {
+                background-color: darkblue;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Computers</h1>
+        <table>
+           <tr>
+            <th>Maker</th> <th>Model</th> <th>Year</th>
+           </tr>
+           <tr class="dark">
+            <td >Commodore</td> <td>64</td> <td>1989</td>
+           </tr>
+          <tr>
+            <td>IBM</td> <td>Gold</td> <td>2019</td>
+          </tr> 
+          <tr class="dark">
+            <td>Microsoft</td> <td>Windows</td> <td>2010</td>
+          </tr>
+        </table>
+    </body>
+</html>
