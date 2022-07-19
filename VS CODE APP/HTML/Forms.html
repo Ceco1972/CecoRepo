@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <form action = "askDeveloper" method = "post">
+            <label for="username">Full Name</label>
+            <input type="text" id="username"
+            name = "username"/> <br/>
+            <label for = "nickname">Nickname</label>
+            <input type="text" id="nickname"
+            name = "nickname"> <br/>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"/> <br/>
+
+            <label for="phone">Telephone</label>
+            <input type="tel" id="phone" name="phone"/><br/>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age"
+            min="0" max="150"/><br/>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob"/> <br/>
+
+            <p>Check the bands you like:</p>
+            <input type="checkbox" name="bands"
+            value="journey">Journey<br/>
+            <input type="checkbox" name="bands"
+            value="eol">Electric Light Orchestra<br/>
+            <input type="checkbox" name="bands"
+            value="cure">The Cure<br/>
+
+            <p>Enter your favourite city:</p>
+            <input type="radio" name="city"
+            value="NY">New York <br/>
+            <input type="radio" name="city"
+            value="LA">Los Angeles <br/>
+
+            <p>What is your salary?</p>
+            <select>
+             <option value="1">Under $30,000</option>
+             <option value="2">$30,000-60,000</option>
+             <option value="3">$60,000-100,000</option>
+            </select>
+
+
+
+
+
+        </form>
+
+    </body>
+</html>
