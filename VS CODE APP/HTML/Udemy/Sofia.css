@@ -1,0 +1,16 @@
+h1
+{
+ text-align: center;
+ font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-size: 1.75mem;
+ font-weight: bold;
+ text-decoration: none;
+ font-variant: small-caps;
+ color: rgb(0,100,0)
+}
+p
+{
+    line-height: 2em;
+    text-align: center;
+    color: rgb(0, 200, 0) 
+}

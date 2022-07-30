@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+        <style>
+        .form{
+            width: 40%;
+            background-color: darkgray;
+            padding: 20px;
+            font-weight: bolder;
+            font-size: large;
+        }
+        #button {
+            background-color: orange;
+            padding: 10px 25px;
+            text-align: center;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+            color: black;
+         }
+        .container {
+            font-size: 3em;
+            text-align: center;
+            width: 40%;
+            color: red;
+            margin: 20px;
+            background-color: aqua;
+            border: 5px solid yellow;
+        </style>
+        
+    </head>
+    <body>
+        <p class="container">CONTACT US FORM</p>
+        <form class="form" action="#">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName"><br><br>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lasttName" name="lastName"><br><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="phone">Telephone</label>
+            <input type="phone" id="phone" name="phone"><br><br>
+            <label for="comment">Comment</label>
+            <textarea name="" id="comment" rows="4"></textarea>
+            <button id="button" type = "submit">Submit</button>
+            <button id="button" type="reset">Reset</button>
+        </form>
+        
+    <a href="https://www.britannica.com/place/Machu-Picchu"><button id="button">Visit us</button></a>
+    </body>
+</html>
