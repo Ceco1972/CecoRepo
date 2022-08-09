@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Styling Forms and Buttons</title>
+        <style>
+            #container { margin: 5px; padding: 5px; } 
+
+            form
+            {
+                width: 80%;
+                border: 2px solid black; 
+                padding: 10px; 
+                background-color: #fafafa;
+                
+            }
+            input
+            {
+                width: 100%;
+                height: 1.4em;
+                margin-bottom: 20px;
+                font-size: 1.4em; 
+                background-color: #ececec; 
+                border: none; 
+                border-bottom: 2px dashed black
+
+            }
+            input[type=checkbox]
+            { 
+                    width: 20px;
+                    height: 20px;
+                    zoom: 2;
+            }
+            form p
+            {
+                font-family: Arial; 
+                font-size: 1.5em
+            }
+            select
+            {
+            width: 40%;
+            font-size: 1.4em;
+            background-color: #ececec; 
+            }
+           
+            button
+            { 
+                width: 100%;
+                height: 50px; 
+                font-size: 1.75em; 
+                background-color: orange; 
+                border-radius: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+        <form action="#" method="post">
+            <input type="text" id="first"
+            placeholder="First Name"><br>
+            <input type="text" id="last"
+            placeholder="Last Name"><br>
+            <input type="phone" id="phone"
+            placeholder="Phone"><br>
+            <input type="email" id="email"
+            placeholder="Email"><br>
+            <input type="text" id="puppy"
+            placeholder="Puppy's Name"><br>
+            <input type="date" id="date"
+            placeholder="Birthdate"><br>
+            <input type="text" id="breed"
+            placeholder="Breed"><br>
+           <p>VACCINATIONS</p>
+            <p><input type="checkbox" >Parvo</p> 
+           <p><input type="checkbox" >Distemper</p> 
+           <p><input type="checkbox" >Rabies</p> 
+           <p>Where did you hear about the school?</p>
+           <select>
+           <option value=""></option>
+            <option>Driving by</option>
+            <option>Radio</option>
+            <option>Friends/Neighbour</option>
+           </select><br><br><br>
+           <button>Submit</button>
+        </form>
+    </div>
+    </body>
+</html>
