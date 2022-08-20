@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Sprite Sheets</title>
+    </head>
+    <style>
+        body{
+            margin: 0;
+        }
+        #sky{
+            background: blue;
+            width: 500px;
+            height: 500px;
+            position: relative;
+            z-index: -1;
+        }
+        #ground{
+            background: burlywood;
+            width: 500px;
+            height: 300px;
+            z-index: +2;
+            position: absolute;
+            top: 400px;
+            left: 0;
+        }
+        #sun{
+            position: absolute;
+            top: 400px;
+            left: 0;
+            z-index: 1;
+            width: 100px;
+            height: 100px;
+            background: red ;
+            animation: movelt 10s infinite;
+            animation-timing-function: linear;            
+        }
+        @keyframes movelt {
+            0% {
+                background: red;
+                left: 0px;
+                width: 100px;
+                height: 100px;
+                border-radius: 100px;
+            }
+            33% {
+                background: yellow;
+               left: 300px;
+               top: 200px;
+                width: 110px;
+                height: 110px;
+                border-radius: 100px;
+            }
+            66% {
+                background: #efefef;
+                left: 300px;
+                top: 200px;
+                width: 110px;
+                height: 110px;
+                border-radius: 100px;
+            }
+            100%{
+                background: red;
+                left: 400px;
+                top: 400px;
+                width: 100px;
+                height: 100px;
+                border-radius: 100px;
+            }
+        }
+    </style>
+
+    <body>
+        <div id="sky">
+            <div id="sun"></div>
+            <div id="ground"></div>
+        </div>
+       
+    </body>
+</html>
+

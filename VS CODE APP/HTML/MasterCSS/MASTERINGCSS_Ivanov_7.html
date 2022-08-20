@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Responsive Design with CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+               <link rel="stylesheet" href="cssreset.css">
+        <meta http-equiv=”X-UA-Compatible” content="e=edge">
+
+        <style>
+            #container
+            {
+                margin: 0;
+                padding: 0;
+                font-family:'Times New Roman', Times, serif
+                
+            }
+            .header img
+            {
+               margin-left: 20%;
+               margin-top: 20px;
+               width: 50%;
+               height: 20%;
+               padding: 5px;
+            }
+            .sections
+            {
+                margin: 20px;
+                padding: 15px;
+                font-size: 12pt;
+                
+            }
+            .sections p
+            {
+              margin: 20px;     
+            }
+            
+            .story
+            {
+                text-align: center;
+                width: 80%;
+            }
+            .story img
+            {
+                width: 80%;
+            }
+            
+            h2
+            {
+               color: orange;
+                font-weight: bold;
+                font-size: 1.5em;
+                font-style: italic;
+                margin: 20px;
+            }
+                   
+                     
+            footer
+            {
+                position: fixed;
+                left: 600px;
+                bottom: 20px;
+            }
+
+         @media screen and (min-width: 600px) 
+         {
+           .story {
+            width: 45%;
+            float: left;
+            }
+            .story img
+            {
+            width: 45%;
+            }
+            
+            }
+         @media screen and (min-width: 1024px) {
+            
+
+            
+            .story {
+            text-align: center;
+            background-color: #efefef;
+            width: 20%;
+            line-height: 1.2em;
+            float: left;
+            }
+            .story img 
+            {
+                width: 80%;
+                padding: 5px;
+                margin-left: 10%;
+                margin-right: 10%;
+                margin-top: 10%;
+                opacity: 0.35;
+            }
+            .story img:hover {
+                opacity: 1.0;
+                transition: opacity 1s;
+                transition-delay: 1s;
+                transform: rotate(5deg);
+                transform: scale(1.15, 1.15);
+            }
+            
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+            <header class="header">
+            <img src="bear100.jpg">
+            </header>
+            <section class="sections">
+            <article class="story">
+            <img src="bear100.jpg">
+            <h2>Article #1</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
+           elit. Accusamus, at! Ratione omnis perferendis excepturi? 
+           Commodi incidunt, numquam quod soluta sed quaerat non 
+           neque reprehenderit, beatae similique error ipsum, libero adipisci.
+            Accusantium cumque aspernatur recusandae eum in 
+           hic fugiat, sunt maxime ab, sequi doloribus! Delectus quae sequi 
+           MASTERING CSS PAGE 21
+           adipisci earum, facilis aliquam repudiandae tempore! Maxime 
+           officiis maiores unde voluptatem aperiam obcaecati mollitia!
+            Ipsum dolores, optio nesciunt, nisi quo corporis neque 
+           numquam, doloribus necessitatibus repellendus molestias? 
+           Nesciunt veritatis recusandae sed distinctio inventore, sunt 
+           rerum eaque eveniet suscipit! Quod eos quasi sapiente 
+           repudiandae architecto.
+            </p>
+            </article>
+            <article class="story">
+            <img src="bear100.jpg">
+            <h2>Article #2</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
+           elit. Accusamus, at! Ratione omnis perferendis excepturi? 
+           Commodi incidunt, numquam quod soluta sed quaerat non 
+           neque reprehenderit, beatae similique error ipsum, libero adipisci.
+            Accusantium cumque aspernatur recusandae eum in 
+           hic fugiat, sunt maxime ab, sequi doloribus! Delectus quae sequi 
+           adipisci earum, facilis aliquam repudiandae tempore! Maxime 
+           officiis maiores unde voluptatem aperiam obcaecati mollitia!
+            Ipsum dolores, optio nesciunt, nisi quo corporis neque 
+           numquam, doloribus necessitatibus repellendus molestias? 
+           Nesciunt veritatis recusandae sed distinctio inventore, sunt 
+           rerum eaque eveniet suscipit! Quod eos quasi sapiente 
+           repudiandae architecto.
+            </p>
+            </article>
+            <article class="story">
+            <img src="bear100.jpg">
+            <h2>Article #3</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
+           elit. Accusamus, at! Ratione omnis perferendis excepturi? 
+           Commodi incidunt, numquam quod soluta sed quaerat non 
+           neque reprehenderit, beatae similique error ipsum, libero adipisci.
+            Accusantium cumque aspernatur recusandae eum in 
+           hic fugiat, sunt maxime ab, sequi doloribus! Delectus quae sequi 
+           adipisci earum, facilis aliquam repudiandae tempore! Maxime 
+           officiis maiores unde voluptatem aperiam obcaecati mollitia!
+            Ipsum dolores, optio nesciunt, nisi quo corporis neeque 
+            numquam, doloribus necessitatibus repellendus molestias? 
+            MASTERING CSS PAGE 22
+            Nesciunt veritatis recusandae sed distinctio inventore, sunt 
+            rerum eaque eveniet suscipit! Quod eos quasi sapiente 
+            repudiandae architecto.
+             </p>
+             </article>
+             <article class="story">
+             <img src="bear100.jpg">
+             <h2>Article #4</h2>
+
+             <p>Lorem ipsum, dolor sit amet consectetur adipisicing 
+            elit. Accusamus, at! Ratione omnis perferendis excepturi? 
+            Commodi incidunt, numquam quod soluta sed quaerat non 
+            neque reprehenderit, beatae similique error ipsum, libero adipisci.
+             Accusantium cumque aspernatur recusandae eum in 
+            hic fugiat, sunt maxime ab, sequi doloribus! Delectus quae sequi 
+            adipisci earum, facilis aliquam repudiandae tempore! Maxime 
+            officiis maiores unde voluptatem aperiam obcaecati mollitia!
+             Ipsum dolores, optio nesciunt, nisi quo corporis neque 
+            numquam, doloribus necessitatibus repellendus molestias? 
+            Nesciunt veritatis recusandae sed distinctio inventore, sunt 
+            rerum eaque eveniet suscipit! Quod eos quasi sapiente 
+            repudiandae architecto.
+             </p>
+             </article>
+             </section>
+             <footer>
+            <a href="https:facebook.com">Facebook</a>  &nbsp&nbsp&nbsp 
+            <a href="https://twitter.com">Twitter</a>  &nbsp&nbsp&nbsp
+            <a href="https://www.snapchat.com">Snapchat</a>&nbsp&nbsp&nbsp
+            <a href="https://www.instagram.com">Instagram</a>&nbsp&nbsp&nbsp
+            <a href="https://www.linkedin.com">LinkedIn</a> 
+            </footer>
+             </div>
+            </body>
+
+    </body>
+</html>

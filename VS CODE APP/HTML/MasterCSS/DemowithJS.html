@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Transitions</title>
+ <link href=”reset.css” rel=”stylesheet”>
+ <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+<style>
+ #container {
+ font-family: 'Raleway', sans-serif;
+ background-color: #fafafa;
+ }
+
+ header,
+ #thumbs {
+ background-color: beige;
+ width: 96%;
+ margin: 0 auto;
+ box-shadow: 2px 2px #eee;
+ text-align: center;
+ }
+ header p {
+ color: red;
+ padding-top: 10px;
+ margin-bottom: 10px;
+ }
+ header h1 {
+ font-size: 3em;
+ }
+ header h2 {
+ font-size: 2em;
+ padding-bottom: 10px
+ }
+ 
+    #feature{
+        text-align: center;
+    }
+    #feature img{
+        width: 70%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+ 
+ /* #thumbs img {
+ width: 20%;
+ margin-right: 20px;
+ margin-left: 20px;
+ margin-bottom: 10px;
+ margin-top: 10px;
+ opacity: 0.35;
+ box-shadow: 2px 2px #ccc;
+ }*/
+    #thumbs img{
+        width: 20%;
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        opacity: 0.35;
+        box-shadow: 2px 2px #ccc;
+    }
+    #thumbs img:hover{
+        opacity: 1.0;
+        transition: all 1s;
+        transition-delay: 1s;
+        transform: rotate(5deg) scale(1.15, 1.15);
+    }
+ 
+    </style>
+    <script>
+        window.onload=function() {
+            const images = document.getElementsByName('img');
+            for (var x = 1; x < images.length; x++) {
+                images[x].addEventListener('click', function() {
+                    let loc = this.src;
+                    document.getElementById('featureImg').src = loc;
+                });
+            }
+        }
+    </script>
+    
+</head>
+
+<body>
+ <div id=”container”>
+ <header>
+ <!-- Property location information-->  
+ <p>For Sale</p>
+ <h1>129 Maple Ave South</h1>
+ <h2>Westport, CT 06880</h2>
+ <h2>$699,000</h2>
+ </header>
+ <div id="feature">
+ <img id="featureImg" src="TheFlinstones1.jpg">
+ </div>
+ 
+ <div id="thumbs">
+ <img src="TheFlinstones2.jpg" alt="The FLinstones">
+ <img src="bear100.jpg" alt="bear">
+ 
+ 
+ </div>
+ </div>
+</body>
+</html>

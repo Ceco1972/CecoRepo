@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Transitions</title>
+        <link rel="stylesheet" href="cssreset.css">
+<style>
+         
+          
+         #flinstones{
+            text-align: center;
+            margin-top: 50px;
+         }
+         #flinstones img:hover{
+            transform: rotate(25deg);
+         }
+
+         #bear{
+            text-align: center;
+            margin-top: 130px;
+         }
+        
+            #bear img:hover
+            {
+                transform: skew(200deg);
+            }
+
+           h1{
+            font-size: 20px;
+           }
+            h1:hover {
+                transform: rotate(5deg);  
+                     }
+
+            #flinstones2{
+            text-align: center;
+                margin-top: 30px;
+            }
+            #flinstones2 img:hover{
+                transform: translate(200px, 0);
+                transition: 3s;
+            }
+            <script>
+                window.onload = function () {
+                const images = document.getElementsByTagName(“img”);
+                for (var x = 1; x < images.length; x++) {
+                     images[x].addEventListener(‘click’, function () {
+                        let loc = this.src;
+                        document.getElementById(‘featureImage’).src = loc;
+                    });
+                  }
+                }
+            </script>
+        </style>
+
+    </head>
+
+    <body>
+        
+        <div id="flinstones">
+            <img style="width: 500px;" src="TheFlinstones1.jpg" alt="TheFlinstones">
+        </div>
+        
+        <h1>Transformations</h1><br><br>
+
+        <div id="bear">
+            <img style="width: 300px;" src="bear100.jpg" alt="Bear">
+        </div>
+
+        <div id="flinstones2">
+            <img src="TheFlinstones2.jpg" alt="TheFlinstones2">
+        </div>
+
+    </body>
+</html>

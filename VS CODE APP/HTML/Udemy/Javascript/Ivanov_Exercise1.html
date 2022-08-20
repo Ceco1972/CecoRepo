@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSInputOutput</title>
+    </head>
+    <body>
+       <div id="output"></div>
+       <script>
+            var names = prompt("Enter your two names:")
+            var verb1 = prompt("Enter verb 1:");
+            var verb2 = prompt("Enter verb 2:");
+            var verb3 = prompt('Enter verb 3:');
+            var adj1 = prompt('Enter adjective 1:');
+            var adj2 = prompt('Enter adjective 2:');
+            var adj3 = prompt('Enter adjective 3');
+            
+            var out = "My name is " + names + ".<br/>";
+            out+= "I" + " " + verb1 + " " + adj1 + " " + "days" +".";
+            out+="<br/> Every day I" + " " + verb2 + " " + " nearby" + adj2 + " village" + ".";
+            out+= "<br/> Yesterday I " + verb3 + " to a" + " " + adj3 +  " " + "restaurant" +".";
+            
+            document.getElementById('output').innerHTML = out;
+        </script>
+    </body>
+</html>

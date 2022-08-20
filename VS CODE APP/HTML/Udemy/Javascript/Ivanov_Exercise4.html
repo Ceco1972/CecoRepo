@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <div id="out"></div>
+        <script>
+            var numstr1 = prompt("Enter first number: ");
+            var num1 = parseInt(numstr1);
+            var numstr2 = prompt("Enter second number: ");
+            var num2 = parseInt(numstr2);
+            var operator = prompt("Enter operator: ");
+            var result;
+            var s = "";
+            switch(operator)
+            {
+                case "*":
+                result = num1*num2;
+                s="The product of " + numstr1 + " and " + numstr2 + " is " + result;
+                break;
+                case "+":
+                result = num1 + num2;
+                s="The sum of " + numstr1 + " and " + numstr2 + " is " + result;
+                break;
+                case "-":
+                result = num1 - num2;
+                s="Subtracting" + numstr2 + " from " + numstr1 + " results in " + result;
+                break;
+                case "/":
+                result = num1/num2;
+                s="The division of " + numstr1 + " by " + numstr2 + " results in " + result;
+                break;
+                case "%":
+                result = num1%num2;
+                s="Modulus of " + numstr1 + " by " + numstr2 + " results in " + result;
+                break;
+                default: result = 0;
+            }
+            
+            document.getElementById('out').innerHTML = s;
+
+
+        </script>
+    </body>
+</html>

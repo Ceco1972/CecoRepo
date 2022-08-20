@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operators</title>
+    </head>
+    <body>
+        <div id="out"></div>
+        <script>
+            var stringnum1 = prompt("Enter a number: ");
+            var num1= parseInt(stringnum1);
+            var stringnum2 = prompt("Enter second number: ");
+            var num2 = parseInt(stringnum2);
+            var output = "The sum of " + stringnum1 + " and " + stringnum2 + " is " + (num1+num2);
+            output += "<br/>" + "Subtracting " + stringnum2 + " from " + stringnum1 + " results in " + (num1 - num2);
+            output += "<br/>" + "Multiplying " + stringnum1 + " by " + stringnum2 + " results in " + (num1*num2);
+            output += "<br/>" + "Is " + stringnum1 + " equal to " + stringnum2 + " ? " + " Answer: " + (num1==num2); 
+            document.getElementById('out').innerHTML = output;
+        </script>
+    </body>
+</html>
