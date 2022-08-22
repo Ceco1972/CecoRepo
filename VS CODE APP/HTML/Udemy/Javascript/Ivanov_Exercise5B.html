@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loops2</title>
+    </head>
+    <body>
+        <div id="loop"></div>
+        <script>
+            var rows = prompt("Enter number of rows: ");
+            var columns = prompt("Enter number of columns: ");
+            var output = "";
+            for(var i = 0; i<rows; i++)
+            {
+                for(var j = 0; j<columns; j++)
+                {
+                 output += "*"
+                }
+                output+="<br/>";
+            }
+            document.getElementById('loop').innerHTML = output;
+        </script>
+    </body>
+</html>

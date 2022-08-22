@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loops</title>
+    </head>
+    <body>
+        <div id="loop"></div>
+        <div id="loop2"></div>
+        <script>
+            var output = "";
+            
+            for(var x = 1; x<11; x++)
+            {
+                for(var j = 1; j<x+1; j++)
+                {
+                    output += "*";
+
+                }
+                output += "<br/>";
+
+            }
+            
+            for(var x = 10; x>0; x--)
+            {
+                for(var j = 1; j<x; j++)
+                {
+                    output += "*";
+                }
+                output+= "<br/>";
+            }
+            document.getElementById('loop').innerHTML = output;
+            var output2 ="";
+            for(var x = 0; x <4; x++)
+            {
+                for(var y = 1; y<13; y++)
+                {
+                  if(y%2==0)
+                  {
+                    output2+="-";
+                  }
+                  else
+                  {
+                    output2+="*";
+                  }
+                }
+                output2+="<br/>";
+            } 
+            document.getElementById('loop2').innerHTML = output2;
+
+        </script>
+    </body>
+</html>
