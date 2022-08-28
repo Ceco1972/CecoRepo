@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrays</title>
+    </head>
+    <body>
+        <div id="arrays"></div>
+        <script>
+            
+            var GPA = [];
+            var number ="";
+            while (number != "XXX")
+            {
+            number = prompt("Enter a GPA or XXX to Stop");
+            if(number != "XXX")
+            {
+            var num = parseFloat(number);
+            GPA.push(num);
+            }
+            }
+            GPA.sort();
+            var gpastring = "";
+            for(var x = 0; x < GPA.length; x++)
+            {
+              gpastring+=GPA[x] + " "; 
+            }
+            var sum = 0;
+            var GPAOutstanding = [];
+            for(var i = 0; i<GPA.length; i++)
+            {
+                sum+=GPA[i];
+                if(GPA[i]>3.4)
+                {
+                    GPAOutstanding.push(GPA[i]);   
+                }
+            }
+            var average = sum/GPA.length;
+            var highest = GPA[GPA.length-1];
+            var lowest = GPA[0];
+            var outstandingGPAs = "";
+            for(var i = 0; i<GPAOutstanding.length; i++)
+            {
+                outstandingGPAs += GPAOutstanding[i] + " ";
+            }
+
+            document.getElementById('arrays').innerHTML = "Sorted array: " + gpastring + "<br/>" + "This is the average of the elements of the array: "
+             + average + ", the lowest GPA is: " + lowest + ", the highest is: " + highest
+             + "<br/> And here are the outstanding GPAs: " + outstandingGPAs;
+           
+</script>
+    </body>
+</html>
