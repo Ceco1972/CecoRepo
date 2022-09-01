@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Classes and Objects</title>
+        <title>Game Player</title>
     </head>
+    <body>
+        <div id="output"></div>
+        <script src="GamePlayer.js"></script>
+        <script>
+            var game = new GamePlayer("Martin", 1, 0, 50, 0, 0);
+            game.moveRight();
+            game.moveRight();
+            game.moveLeft();
+            game.moveLeft();
+            game.moveLeft();
+            var gridLocY = game.gridLocationY;
+            var gridLocX = game.gridLocationX;
+            alert(game.name);
+            document.getElementById('output').innerHTML = "Y= " + gridLocY  + " X= " + game.gridLocationX;
+        </script>
+    </body>
 </html>

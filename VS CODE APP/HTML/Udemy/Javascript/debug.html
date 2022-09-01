@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Debug it</title>
+    </head>
+    <body>
+        <div id="out"></div>
+<script>
+ 
+ let factor = 3;
+ let output = "";
+const MAXVALUE = 100;
+const MINVALUE = 0;
+
+ 
+ for(let x = MAXVALUE; x > MINVALUE; x--)
+ {
+ if(x % factor == 0)
+ {
+ 
+    output += x;
+    output += "<br/>";
+ }
+ }
+ 
+ 
+ document.getElementById('out').innerHTML = "Factors of " + factor + "<br/>";
+ document.getElementById('out').innerHTML += output;
+ 
+</script>
+
+    </body>
+</html>

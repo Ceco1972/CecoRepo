@@ -277,5 +277,58 @@ FROM
 
 За Q1-4 погледнете TO_CHAR()
 
+---------
 
+Същата задача решена от инструктора:
+
+--Изчислете стойността на продажбите реализирани от служителите за всяко тримесечие
+--на 2015г.
+    WITH 
+         sales
+                AS(SELECT
+                    emp.firstname || ' ' || emp.lastname employee
+                ,   TO_CHAR(ord.order_date, 'Q') Quarter
+                ,   SUM(od.quantity*od.unit_price) Total
+            
+                  FROM
+                    EMPLOYEES emp
+                    LEFT OUTER JOIN
+                   (ORDERS ord
+                        INNER JOIN
+                    ORDER_DETAILS od
+                        ON
+                         ord.order_id = od.order_id)
+                    ON
+                     ord.employee_id = emp.employee_id
+                     WHERE EXTRACT (YEAR FROM ord.order_date) = 2015
+                     
+                    GROUP BY
+                        emp.firstname || ' ' || emp.lastname
+                    ,   TO_CHAR(ord.order_date, 'Q'))
+                    
+            SELECT
+                s.employee
+            ,   SUM(CASE WHEN s.Quarter = 1 then s.Total ELSE 0 END) "Quarter 1"
+            ,   SUM(CASE WHEN s.Quarter = 2 then s.Total ELSE 0 END) "Quarter 2"
+            ,   SUM(CASE WHEN s.Quarter = 3 then s.Total ELSE 0 END) "Quarter 3"
+            ,   SUM(CASE WHEN s.Quarter = 4 then s.Total ELSE 0 END) "Quarter 4"
+            ,   SUM(s.Total) Total
+            
+            FROM
+            sales s
+            
+            GROUP BY 
+            s.employee
+               UNION
+            SELECT NULL
+            ,   SUM(CASE WHEN s.Quarter = 1 then s.Total ELSE 0 END) "Quarter 1"
+            ,   SUM(CASE WHEN s.Quarter = 2 then s.Total ELSE 0 END) "Quarter 2"
+            ,   SUM(CASE WHEN s.Quarter = 3 then s.Total ELSE 0 END) "Quarter 3"
+            ,   SUM(CASE WHEN s.Quarter = 4 then s.Total ELSE 0 END) "Quarter 4"
+            ,   SUM(s.Total) Total  
+            
+            FROM sales s
+            GROUP BY NULL                
+            ORDER BY 1 NULLS LAST
+            -------------------------
 

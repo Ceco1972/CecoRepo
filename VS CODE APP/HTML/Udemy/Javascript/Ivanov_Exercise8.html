@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator2</title>
+    </head>
+    <body>
+        <div id="out"></div>
+        <script>
+            
+            function showResult ()
+            {
+            let num1 =   parseInt(prompt("Enter first number: "));
+            let num2 = parseInt(prompt("Enter second number: "));
+            let operator = prompt("Enter operator ( + , - , * , / , %): ");
+            let result = 0;
+            let s = "";
+            switch (operator)
+            {
+                case "*":
+                result = num1*num2;
+                s="The product of " + num1 + " and " + num2 + " is " + result;
+                break;
+                case "+":
+                result = num1 + num2;
+                s="The sum of " + num1 + " and " + num2 + " is " + result;
+                break;
+                case "-":
+                result = num1 - num2;
+                s="Subtracting" + num2 + " from " + num1 + " results in " + result;
+                break;
+                case "/":
+                result = num1/num2;
+                s="The division of " + num1 + " by " + num2 + " results in " + result;
+                break;
+                case "%":
+                result = num1%num2;
+                s="Modulus of " + num1 + " by " + num2 + " results in " + result;
+                break;
+                default:
+                break;
+            }
+            return s;
+            }
+            
+            document.getElementById('out').innerHTML = showResult();
+
+            
+
+        
+        </script>
+    </body>
+</html>
