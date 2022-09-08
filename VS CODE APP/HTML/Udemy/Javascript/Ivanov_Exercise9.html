@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Functions</Title>
+    </head>
+    <body>
+        <div id="out"></div>
+        <script>
+            //let num = prompt("Enter number of to-do items: ");
+
+            function todo()
+            {
+                
+                let todoArray = [];
+                let word = "";
+                while(word!="end")
+                {
+                    word = prompt("enter todo item and 'end' when you are finished: ");
+                    todoArray.push(word);
+                } 
+
+                // for(i=0; i<num; i++)
+                // {
+                //     todoArray[i] = prompt("Enter item number");
+                // }
+                return todoArray;
+            }
+
+            function addTodos()
+            {
+                arrayTodo = todo();
+                let todolist = "";
+                for (i=0;i<arrayTodo.length-1; i++)
+                {
+                    todolist += "<p>" + (i+1)+"." + arrayTodo[i] + "  " + "</p>";
+                }
+                document.getElementById('out').innerHTML = "<h1>" + todolist + "<h1/>";
+            }
+            addTodos();
+        </script>
+    </body>
+</html>

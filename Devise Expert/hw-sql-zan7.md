@@ -205,7 +205,7 @@ BG Average: 200
 
 SELECT
     ns.firstname || ' ' || ns.lastname Name
-,  (SELECT Count(*) 
+,   (SELECT Sum(t3.quantity*t3.unit_price) 
 FROM
     EMPLOYEES t1
         LEFT OUTER JOIN 
@@ -218,7 +218,7 @@ FROM
           t2.employee_id = t1.employee_id
     WHERE (To_Char (t2.order_date, 'Q') = '1') AND (EXTRACT(YEAR FROM t2.order_date) = 2015) AND t1.lastname = ns.lastname
     ) Q1_2015
-,   (SELECT Count(*) 
+,   (SELECT Sum(t3.quantity*t3.unit_price) 
 FROM
     EMPLOYEES t1
         LEFT OUTER JOIN 
@@ -231,7 +231,7 @@ FROM
           t2.employee_id = t1.employee_id
     WHERE (To_Char (t2.order_date, 'Q') = '2') AND (EXTRACT(YEAR FROM t2.order_date) = 2015) AND t1.lastname = ns.lastname
     ) Q2_2015
-,   (SELECT Count(*) 
+,   (SELECT Sum(t3.quantity*t3.unit_price) 
 FROM
     EMPLOYEES t1
         LEFT OUTER JOIN 
@@ -244,7 +244,7 @@ FROM
           t2.employee_id = t1.employee_id
     WHERE (To_Char (t2.order_date, 'Q') = '3') AND (EXTRACT(YEAR FROM t2.order_date) = 2015) AND t1.lastname = ns.lastname
     ) Q3_2015
-,   (SELECT Count(*) 
+,   (SELECT Sum(t3.quantity*t3.unit_price) 
 FROM
     EMPLOYEES t1
         LEFT OUTER JOIN 
@@ -257,7 +257,7 @@ FROM
           t2.employee_id = t1.employee_id
     WHERE (To_Char (t2.order_date, 'Q') = '4') AND (EXTRACT(YEAR FROM t2.order_date) = 2015) AND t1.lastname = ns.lastname
     ) Q4_2015
-,   (SELECT Count(*) 
+,   (SELECT Sum(t3.quantity*t3.unit_price) 
 FROM
     EMPLOYEES t1
         LEFT OUTER JOIN 
@@ -272,7 +272,7 @@ FROM
 ) Total
 FROM
     EMPLOYEES ns
-
+    order by 1
 ```
 
 За Q1-4 погледнете TO_CHAR()
