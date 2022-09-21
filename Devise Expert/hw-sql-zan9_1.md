@@ -24,6 +24,18 @@ GROUP BY
     t1.country
 ORDER BY 1
 ```
+Решение на инструктора:
+SELECT
+    t1.country
+,   count(*) NCustomers
+,   LPAD(' ', COUNT(*) + 1, '■') Graph //квадратчето се прави с alt + 2 + 5 + 4
+FROM
+    CUSTOMERS t1
+GROUP BY 
+    t1.country
+ORDER BY 2 DESC
+
+---------------
 
 ## Задача 22:
 
@@ -142,14 +154,10 @@ ORDER BY
             t1.company_name)
     , all_orders 
         AS (SELECT
-                SUM(od.quantity*od.unit_price) TOTAL_SALES
-            ,   COUNT(*) TOTAL_ITEMS
+                SUM(sales.sales) TOTAL_SALES
+            ,   SUM(sales.n_items) TOTAL_ITEMS
             FROM
-                orders os
-                    INNER JOIN
-                order_details od
-                     ON od.order_id = os.order_id
-            WHERE EXTRACT(YEAR FROM os.order_date) = 2015)
+                sales)
      
 SELECT
     s.company
@@ -162,7 +170,7 @@ FROM
 CROSS JOIN
     all_orders ao
 ORDER BY 
-    4 DESC
+    2 DESC
 
 
 ```
@@ -186,7 +194,7 @@ ORDER BY
             t1.category_name category
         ,   t2.product_name product
         ,   SUM(t3.quantity*t3.unit_price) SALES_2015
-        ,   COUNT(*) QUANTITY
+        ,   SUM(t3.quantity) QUANTITY
         FROM
             categories t1
                 INNER JOIN 
@@ -265,6 +273,7 @@ WITH n_orders
     , stats
     AS(SELECT
     s.company company
+    , s.sales sales
 ,   SUM(s.sales)
         OVER (
         ORDER BY s.sales DESC
@@ -284,6 +293,7 @@ WITH n_orders
 ,   sa.n_orders
 ,   st.cum_sales
 ,   Round(st.cum_sales/st.total_sales*100, 2) cum_perc
+,   LPAD('■',st.cum_sales/st.total_sales*100, '■') gRAPH
     FROM 
     STATS st
         INNER JOIN 
@@ -291,7 +301,8 @@ WITH n_orders
         ON sa.company = st.company
     WHERE st.cum_sales/st.total_sales*100 < 50
     
-    UNION 
+        ORDER BY 5
+  /*  UNION 
       
     SELECT
      'ALL CUSTOMERS'
@@ -302,7 +313,7 @@ WITH n_orders
     ORDERS t1
     INNER JOIN
     ORDER_DETAILS t2
-    ON t1.order_id = t2.order_id
+    ON t1.order_id = t2.order_id*/
 ```
 
 ## Задача 26.1

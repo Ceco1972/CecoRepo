@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 50%;
+            font-size: 1.5em;
+            background-color: aqua;
+            border: 2px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <label for="first number">First Number</label>
+    <input type="number" value = "0" id="first number"> <br>
+    <label for="second number">Second Number</label>
+    <input type="number" value = "0" id="second number"><br>
+
+    <button id="math">Calculate</button>
+    <div id="out"></div>
+    <script>
+        
+    let result = "";
+    document.getElementById("math").addEventListener("click", function()
+    {
+        let a = parseFloat(document.getElementById("first number").value);
+        let b = parseFloat(document.getElementById("second number").value);
+        let c = a+b;
+        let d = a - b;
+        let divis = (a/b).toFixed(2);
+        let product = a*b;
+        result += "a + b = " + c +  "<br>";
+        result += "a - b = " + d + "<br>";
+        result += "a/b = " + divis + "<br>";
+        result += "a*b = " + product + "<br>";
+
+
+        document.getElementById("out").innerHTML = result;
+    });
+    </script>
+    
+   
+</body>
+</html>

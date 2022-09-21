@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+        form {
+        font-family:'Courier New', Courier, monospace;
+        font-weight: bolder;
+        background-color: #eee;
+        border: 1px solid black;
+        width: 50%;
+        flex: auto;
+        flex-wrap: wrap;
+ 
+    }
+   </style>
+    
+</head>
+<body>
+    <form action=”#” method=”post”>
+   
+    <label for="clothingA">Clothing</label>
+        <input type="text" id = "clothingA"> <br>
+        <label for="bodyPartB">Body part</label>
+        <input type="text" id="bodyPartB"> <br>
+        <label for="bodyPartC">Body part 2</label>
+        <input type="text", id="bodyPartC"><br>
+        <label for="verb">Verb (base form)</label>
+        <input type="text" id="verb"><br>
+        <label for="bodyPartE">Body part 3</label>
+        <input type="text" id="bodyPartE"><br>
+        <label for="verbF">Verb2</label>
+        <input type="text" id="verbF"><br>
+        <label for="noun">Noun (in plural)</label>
+        <input type="text" id="noun"><br>
+        <label for="nounH"> Noun2 (in plural)</label>
+        <input type="text" id="nounH"><br>
+        <label for="verbI">Verb3</label>
+        <input type="text" id="verbI"><br>
+       </form>
+        
+        
+        <button type="submit" id="danceIt">DanceInstruction</button>
+    <div id="out"></div>
+
+    <script>
+        
+        document.getElementById("danceIt").addEventListener("click", function ()
+        {
+            let clothingA = document.getElementById("clothingA").value;
+            let bodyPartB = document.getElementById("bodyPartB").value;
+            let bodyPartC = document.getElementById("bodyPartC").value;
+            let verb = document.getElementById("verb").value;
+            let bodyPartE = document.getElementById("bodyPartE").value;
+            let verbF = document.getElementById("verbF").value;
+            let noun = document.getElementById("noun").value;
+            let nounH = document.getElementById("nounH").value;
+            let verbI = document.getElementById("verbI").value;
+
+            const dance = `How to do The Floss Dance
+                            1 ) Put on some music 
+                            2 ) Put on a ${clothingA} ( optional ) 
+                            3 ) Stand with your ${bodyPartB} ever so slightly bent 
+                            4 ) Put your hands in fists 
+                            5 ) Place your ${bodyPartC}, relaxed, at the side of your body 
+                            6 ) Begin to ${verb} your ${bodyPartE} left and right around your torso in the 
+                            opposite direction to your hips 
+                            7 ) Keep doing it and increase speed and ${verbF} ${noun} occasionally for 
+                            effect
+                            After building confidence, you can also ${verbI} ${nounH} with your arms if 
+                            desired, but this is not mandatory.`;
+
+            document.getElementById("out").innerHTML = dance;
+
+        });
+
+
+        
+    </script>
+</body>
+</html>

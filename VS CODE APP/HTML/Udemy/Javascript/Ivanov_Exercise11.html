@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sets</title>
+</head>
+<body>
+    <div id="random"></div><br>
+ 
+    <button id="getNumber">Get Number</button><br><br><br>
+    
+    <div id="bingo"></div>
+
+    <button id="getBingoNums">Get Bingo Numbers</button>
+
+<script>
+    const num = document.getElementById("getNumber");
+    const getBingoNums = document.getElementById("getBingoNums");
+    let numbers = new Set();
+    
+    num.onclick = function()
+    {
+        let size = numbers.size;
+        let chosenNum = 0;
+        let chosenInt = 0;
+        do
+        {
+        chosenNum = Math.random()*100;
+        chosenInt = Math.round(chosenNum);
+ 
+        } while(numbers.has(chosenInt)==true)
+        numbers.add(chosenInt); 
+        
+        document.getElementById("random").innerHTML = chosenInt;
+    }
+        
+        
+        getBingoNums.onclick = function()
+    {
+        let numString ="";
+
+        for(let entry of numbers)
+        {
+            numString+=entry + " ";
+        }
+        document.getElementById("bingo").innerHTML = numString;
+        for(let entry of numbers)
+        {
+            numbers.delete(entry);
+        }
+    } 
+    
+        
+    
+ </script>
+</body>
+</html>

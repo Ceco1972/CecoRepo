@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Maps</title>
+    </head>
+    <body>
+        <h1>Enter task and then camper</h1>
+        <label for="task">Task</label>
+        <input type="text" id="task"> <br>
+        <label for="name">Camper</label>
+        <input type="text" id="name"> <br>
+        <button id="addTasktoCamper">Task - Camper</button> <br>
+        <button id="listAssignments">Campers tasks</button>
+        
+        <div id="result"></div>
+        <script>
+            const ADDBUTTON = document.getElementById("addTasktoCamper");
+            const DISPLAYBUTTON = document.getElementById("listAssignments");
+
+            let assignments = new Map();
+            ADDBUTTON.onclick = function () {
+            let task = document.getElementById("task");
+            let camper = document.getElementById("name");
+            assignments.set(task.value, camper.value);
+            task.value = "";
+            camper.value = "";
+            };
+                              
+            DISPLAYBUTTON.onclick = function () {
+            let out = "";
+            for (let x of assignments.entries()) {
+            out += x[0] + ":" + x[1];
+            out += "<br/>";
+            }
+            document.getElementById("result").innerHTML = out;
+            };
+        </script>
+    </body>
+</html>

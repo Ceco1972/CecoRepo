@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <title>OnsenCalculator</title>
+</head>
+<body>
+        
+    <ons-page>
+        
+        <ons-toolbar>
+            <div class="center">Framework Tip Calculator</div>
+        </ons-toolbar>
+        <section style="padding: 8px;">
+         <div style="margin-bottom: 20px;">
+           <input class="text-input text-input--material" placeholder="Bill Amount" type="text" style="width:100%" required id="billAmount">
+         </div>
+         <div style="margin-bottom: 20px;">
+          <ons-range style="width: 50%;" value="18" min="0" max="50" step="0.5" id="tipRange">
+          </ons-range>
+          <output id="percentOut">18%</output>
+         </div>
+         <div> <ons-button modifier="large" id="btnCalculate">Calculate Tip</ons-button></div>
+        </section>
+        <section style="padding: 8px;">
+            <output id="result"></output>
+        </section>
+    </ons-page>
+    <script src="tip.js"></script>
+
+</body>
+</html>
