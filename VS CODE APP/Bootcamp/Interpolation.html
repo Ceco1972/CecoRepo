@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW Class 2.1</title>
+</head>
+<body>
+    <h1>Mad Libs</h1>
+    <label for="verb1">Verb</label>
+    <input type="text" id="verb1" />
+    <br/><label for="adjective1">Adjective</label>
+    <input type="text" id="adjective1" />
+    <br/><label for="time1">Time</label>
+    <input type="text" id="time1" />
+    <br/><label for="time2">Time</label>
+    <input type="text" id="time2" />
+    <br/><label for="noun1">Noun</label>
+    <input type="text" id="noun1" />
+    <br/><label for="verb2">Verb</label>
+    <input type="text" id="verb2" />
+    <br/><label for="name1">Name</label>
+    <input type="text" id="name1" />
+    <br/><label for="adjective2">Adjective</label>
+    <input type="text" id="adjective2" />
+    <br/><button id="btnProcess">Process</button>
+    <div id="output"></div>
+    <script>
+        document.getElementById("btnProcess").addEventListener("click", writeMadLib);
+
+        function writeMadLib(event){
+            console.log(event);
+            let verb1 = document.getElementById('verb1').value;
+            let adj1 = document.getElementById('adjective1').value;
+            let time1 = document.getElementById('time1').value;
+            let time2 = document.getElementById('time2').value;
+            let noun1 = document.getElementById('noun1').value;
+            let verb2 = document.getElementById('verb2').value;
+            let name1 = document.getElementById('name1').value;
+            let adj2 = document.getElementById('adjective2').value;
+            
+            let song = `Where it began, I can't begin to <strong>${verb1}</strong><br/>
+                        But then I know it's growing ${adj1}<br/>
+                        Was in the ${time1}<br/>
+                        And spring became the ${time2}<br/>
+                        Who'd have believed you'd come along<br/>
+                        <br/>
+                        Hands, touching ${noun1}<br/>
+                        Reaching out, touching me, ${verb2} you<br/>
+                        Sweet ${name1}<br/>
+                        Good times never seemed so ${adj2}<br/>
+                        I've been inclined<br/>
+                        To believe they never would<br/>
+                        But now I`;
+
+
+            document.getElementById("output").innerHTML = song;
+
+
+        }
+    </script>
+</body>
+</html>

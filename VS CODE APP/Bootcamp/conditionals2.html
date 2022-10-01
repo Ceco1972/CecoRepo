@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        let letterGrade = prompt("What letter grade did you receive?");
+        let comment = "";
+        switch(letterGrade){
+            case "A":
+            case "a":
+                comment = "Excellent Achievement";
+                break;
+            case "B":
+            case "b":
+                comment = "Above Average Achievement";
+                break;
+            case "C":
+            case "c":
+                comment="Average Achievement";
+                break;
+            case "D":
+            case "d":
+                comment="Below Average";
+                break;
+            default:
+                comment="Failure. No credit";
+        }
+
+        document.getElementById("output").innerHTML = comment;
+    </script>
+</body>
+</html>

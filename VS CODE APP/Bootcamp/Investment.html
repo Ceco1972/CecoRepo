@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment</title>
+    <style>
+        body {
+            margin-top: 100px;
+            margin-left: 500px;
+            margin-right: 500px;
+            align-self: center;
+            
+            border: 1px dotted black;
+        }
+        form {
+            background-color: lightgrey;
+
+        }
+        label {
+            width: 100%;
+        }
+        input {
+            width: 80%
+        }
+        div {
+            border-bottom: 1px dotted black;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="amount">Amount Invested</label><br>
+        <input type="number" id="money"><br>
+        <label for="interest">Interest Rate</label><br>
+        <input type="number" id="rate"><br>
+        <label for="time">Months Invested</label><br>
+        <input type="number" id="lasting"><br>
+        <button id="btn">Calculate</button>
+        <div id="output"></div>
+        <div id="output2"></div>
+    
+    </form>
+        <script>
+        document.getElementById("btn").addEventListener("click", function()
+        {
+            document.getElementById("output").innerHTML = "";
+            let amount = parseFloat(document.getElementById("money").value);
+            let interest = parseFloat(document.getElementById("rate").value);
+            let nMonths = parseFloat(document.getElementById("lasting").value);
+            
+            let monthString = "";
+            for(let x = 1; x<nMonths; x++)
+            {
+              monthString = "<div>  <strong>" + "Month" + x + "</strong>" +  "</br>";
+                console.log(amount);
+              monthString += "Interest earned $"+ interest * amount + "</br>";
+              amount = interest * amount + amount;
+
+              monthString += "New Account Total: $" + amount;
+              
+              monthString += "</div>";
+              document.getElementById("output").innerHTML +=monthString;
+            }
+            
+
+            
+            //document.getElementById("output2").innerHTML = interest;
+        })
+    </script>
+</body>
+</html>

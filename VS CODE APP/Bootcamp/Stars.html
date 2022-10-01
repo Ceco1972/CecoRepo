@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> JavaScript BootCamp3 Lab3 </title>
+</head>
+<body>
+    <h1> Simple Counting program that counts from 1 to 7 and then counts down from 6 to 1. Each time it loops it will output loop counter number of * to the innerHTML of the outpt div.
+          Press the Start Button to begin.</h1>
+    
+    <button id="btnStart">Start Counting</button><br/>
+    <output id="output"></output>
+
+    <script>
+        
+        
+        function writeStars(startValue,loopCounter,loopCounterStars){
+                    //for loop to go from startCounter to the loopCounter Value
+                    // writting the loopCounter number of *  to the innerHTML 
+                    for (let starCounter = startValue; starCounter <= loopCounter; starCounter++) {
+                        loopCounterStars += "*";
+                    }
+                    document.getElementById("output").innerHTML += loopCounterStars + "<br>";
+                    loopCounterStars = "";
+        }
+        
+        document.getElementById("btnStart").addEventListener("click", function(){
+
+            let startValue = 1;
+            let endValue = 7;
+            let loopCounterStars = "";
+            
+                //for loop to go from start vaule to the end Value
+                for(let loopCounter = startValue; loopCounter <= endValue; loopCounter++ ){                  
+                     writeStars(startValue,loopCounter,loopCounterStars);
+                }
+            
+                // for loop to go from endValue-1 to start value           
+                for(let loopCounter = endValue - 1; loopCounter >= startValue; loopCounter-- ){                                       
+                    writeStars(startValue,loopCounter,loopCounterStars);
+                }
+            
+        } )//end of function() called by the click
+    </script>
+</body>
+</html>

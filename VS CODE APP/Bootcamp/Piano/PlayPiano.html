@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayPiano</title>
+    <style>
+        #p1{
+            background-color: aqua;
+            width: 30%;
+            height: 100px;
+            float: left;
+        }
+        #p2{
+            background-color:blueviolet;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } 
+        #p3{
+            background-color: aqua;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } 
+        #p4{
+            background-color:beige;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } 
+        #p5{
+            background-color: aqua;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } 
+        #p6{
+            background-color:azure;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } 
+        #p7{
+            background-color:darkgreen;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } 
+        #p8{
+            background-color:blueviolet;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } 
+        #p9{
+            background-color: aqua;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } 
+        #p10{
+            background-color:antiquewhite;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p11{
+            background-color: aqua;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p12{
+            background-color:bisque;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p13{
+            background-color: aqua;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p14{
+            background-color:crimson;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p15{
+            background-color: aqua;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p16{
+            background-color:chartreuse;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p17{
+            background-color:darkturquoise;
+            width: 30%;
+            height: 100px;
+            float: left;
+        }
+        #p18{
+            background-color: aqua;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p19{
+            background-color:brown;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p20{
+            background-color: aqua;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p21{
+            background-color:bisque;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p22{
+            background-color:blue;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p23{
+            background-color: aqua;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } #p24{
+            background-color:beige;
+            width: 30%;
+            height: 100px;
+            float: left;
+        } 
+    </style>
+</head>
+<body>
+    <div id="p1"></div>
+    <div id="p2"></div>
+    <div id="p3"></div>
+    <div id="p4"></div>
+    <div id="p5"></div>
+    <div id="p6"></div>
+    <div id="p7"></div>
+    <div id="p8"></div>
+    <div id="p9"></div>
+    <div id="p10"></div>
+    <div id="p11"></div>
+    <div id="p12"></div>
+    <div id="p13"></div>
+    <div id="p14"></div>
+    <div id="p15"></div>
+    <div id="p16"></div>
+    <div id="p17"></div>
+    <div id="p18"></div>
+    <div id="p19"></div>
+    <div id="p20"></div>
+    <div id="p21"></div>
+    <div id="p22"></div>
+    <div id="p23"></div>
+    <div id="p24"></div>
+    
+<script>
+    let touchpads = document.getElementsByTagName("div");
+    for(let n = 0; n<touchpads.length; n++)
+    {
+        touchpads[n].addEventListener("mousedown", function()
+        {
+            playSound(this.id);
+        })
+    }
+    
+   function playSound(obj)
+    {
+        const tone = new Audio();
+        switch(obj)
+        {
+            case "p1":
+            tone.src = "key01.mp3";
+            break;
+            case "p2":
+            tone.src = "key02.mp3";
+            break;
+            case "p3":
+            tone.src = "key03.mp3";
+            break;
+            case "p4":
+            tone.src = "key04.mp3";
+            break;
+            case "p5":
+            tone.src = "key05.mp3";
+            break;
+            case "p6":
+            tone.src = "key06.mp3";
+            break;
+            case "p7":
+            tone.src = "key07.mp3";
+            break;
+            case "p8":
+            tone.src = "key08.mp3";
+            break;
+            case "p9":
+            tone.src = "key09.mp3";
+            break;
+            case "p10":
+            tone.src = "key10.mp3";
+            break;
+            case "p11":
+            tone.src = "key11.mp3";
+            break;
+            case "p12":
+            tone.src = "key12.mp3";
+            break;
+            case "p13":
+            tone.src = "key13.mp3";
+            break;
+            case "p14":
+            tone.src = "key14.mp3";
+            break;
+            case "p15":
+            tone.src = "key15.mp3";
+            break;
+            case "p16":
+            tone.src = "key16.mp3";
+            break;
+            case "p17":
+            tone.src = "key17.mp3";
+            break;
+            case "p18":
+            tone.src = "key18.mp3";
+            break;
+            case "p19":
+            tone.src = "key19.mp3";
+            break;
+            case "p20":
+            tone.src = "key20.mp3";
+            break;
+            case "p21":
+            tone.src = "key21.mp3";
+            break;
+            case "p22":
+            tone.src = "key22.mp3";
+            break;
+            case "p23":
+            tone.src = "key23.mp3";
+            break;
+            case "p24":
+            tone.src = "key24.mp3";
+            break;
+           
+
+        }
+        tone.play();
+    }
+</script>
+</body>
+</html>

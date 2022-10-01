@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for and for in...</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        // for(let x = 1; x < 101; x++){
+        //     document.getElementById("output").innerHTML += x + " ";
+        // }
+
+        let family = [];
+        family[0] = "Joan";
+        family[1] = "Rick";
+        family[2] = "Brett";
+        family[3] = "Kerri";
+        family[4] = "Colleen";
+        family[5] = "Connor";
+        
+        // for(let x=0; x < family.length; x++)    {
+        //     document.getElementById("output").innerHTML += family[x];
+        //     document.getElementById("output").innerHTML += "<br/>";
+        // }
+
+        const person = {fname:"Mark", lname:"Lassoff", age:25};
+        
+        let out = "";
+        for(let x in person){
+            out += person[x];
+            console.log(x);
+        }
+        document.getElementById("output").innerHTML = out;
+
+        let grades = [96, 77, 59, 78, 85, 81, 90, 55, 88, 91, 100, 75, 67];
+        let sum = 0;
+        for(let x in grades){
+            sum += grades[x];
+            console.log(x + ": " + sum);
+        }
+        let average = sum/grades.length;
+        document.getElementById("output").innerHTML = "Average: " + average;
+
+        
+        // console.log(family[5]);
+        // console.log(family.length);
+        // family.push("Mark");
+        // console.log(family);
+
+
+    </script>
+</body>
+</html>

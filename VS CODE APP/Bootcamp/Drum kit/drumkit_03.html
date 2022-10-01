@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drumkit</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            margin: 0px;
+        }
+
+        #d1{
+            background-color: red;
+            width: 50%;
+            height: 200px;
+            float: left;
+        }
+        #d2{
+            float: right;
+            background-color: blue;
+            width: 50%;
+            height: 200px;
+        }
+        #d3{
+            float: left;
+            background-color: orange;
+            width: 50%;
+            height: 200px;
+        }
+        #d4{
+            float: left;
+            background-color: green;
+            width: 50%;
+            height: 200px;
+        }
+        #d5{
+            background-color: purple;
+            width: 50%;
+            height: 200px;
+            float: left;
+        }
+        #d6{
+            float: left;
+            background-color: chocolate;
+            width: 50%;
+            height: 200px;
+        }
+        #d7{
+            float: left;
+            background-color: yellow;
+            width: 50%;
+            height: 200px;
+        }
+        #d8{
+            float: left;
+            background-color: firebrick;
+            width: 50%;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+    <div id="d6"></div>
+    <div id="d7"></div>
+    <div id="d8"></div>
+</div>
+<script>
+    let touchpads = document.getElementsByTagName("div")
+    const audio = new Audio();
+
+    for(let x =1; x < touchpads.length; x++)
+    {
+        touchpads[x].addEventListener('mousedown', function(){
+            playSound(this.id);
+        });
+        touchpads[x].addEventListener('mouseup', function(){
+            stopSound(this.id);
+        });
+    }
+
+    function playSound(obj){
+        console.log(obj);
+        audio.src= 'snare1.wav';
+        audio.play();
+
+    }
+
+    function stopSound(obj){
+        console.log(obj);
+        audio.pause();
+    }
+</script>
+</body>
+</html>

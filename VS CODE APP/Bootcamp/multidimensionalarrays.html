@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multidimensional Arrays</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        let scores =[
+            ['test1', 97,89,78,72],
+            ['test2', 91,67,89,100],
+            ['test3', 87,67,88,91],
+            ['test4', 80,82,86,100]
+        ];
+
+        for(x in scores){
+            console.log(x + ": " + scores[x]);
+            for(let y = 0; y < scores[x].length; y++){
+                console.log(scores[x][y]);
+            }
+        }
+    </script>
+</body>
+</html>

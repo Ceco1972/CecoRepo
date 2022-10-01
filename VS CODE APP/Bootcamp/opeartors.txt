@@ -1,0 +1,12 @@
+==      Equal in value
+===     Equal in value and type
+>       GT
+<       LT
+>=      GT or Equal
+<=      LT or Equal
+!       Not
+!=      Equal
+
+2 == "2" true
+2 === 2 true
+2 === "2" false

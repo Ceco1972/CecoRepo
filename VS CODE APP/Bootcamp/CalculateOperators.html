@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW Class 2.1</title>
+    <style>
+        input {
+            width: 100%;
+            height: 35px;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Please enter two numbers...</h1>
+    <input type="number" value="0" id="number1" />
+    <input type="number" value="0" id="number2" />
+    <button id="btnProcess">Process</button>
+    <div id="result"></div>
+    <script>
+        document.getElementById('btnProcess').addEventListener("click", function(){
+            let operand1 = document.getElementById("number1").value;
+            let operand2 = document.getElementById("number2").value;
+            // console.log(operand1);
+            // console.log(operand2);
+            let output = operand1 + " + " + operand2 + " = " + (parseInt(operand1) + parseInt(operand2));
+            output += "<br/>";
+            output += operand1 + " - " + operand2 + " = " + (operand1 - operand2);
+            output += "<br/>";
+            output += operand1 + " * " + operand2 + " = " + (operand1 * operand2);
+            output += "<br/>";
+            output += operand1 + " / " + operand2 + " = " + (operand1 / operand2).toFixed(2);
+            document.getElementById("result").innerHTML = output;
+        });
+    </script>
+</body>
+</html>
