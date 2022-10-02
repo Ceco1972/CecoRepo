@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js BootCamp Week 3 Night 1 Lab </title>
+    <style>
+        #container{
+            width:400px;
+            border: 1px solid black;
+            background-color: lightgray;
+            padding: 15px;
+            font-family: Arial, Helvetica, sans-serif; 
+            height: 800px
+        }   
+    
+    </style>
+</head>
+    <body>
+    <div id="container">
+      <h3> To Play the Trivia Game press the Get Question button</h3>
+       <dvid id="question"></dvid>
+       <button id="btnSearch">Get Question</button><br/><br/>
+       
+       
+       <div id="radio_home"></div> 
+       <div id="answer"></div>
+        <div id="scoreSheet"></div>
+
+    </div><!-- container div -->
+
+    <script> 
+        const radio_home = document.getElementById("radio_home");
+        const answer = document.getElementById('answer');
+        const question = document.getElementById('question');
+        const scoreSheet = document.getElementById('scoreSheet');
+        let out = "";
+        let results = [];
+        let numQuestions = 0;
+        let correstAnswers = 0;
+        let incorrestAnswers = 0
+        
+        //This code will run when the Calculate Button is clicked
+        document.getElementById("btnSearch").addEventListener("click", function(){
+            //clear out the innerHTML of the divs
+            answer.innerHTML = "";
+            radio_home.innerHTML = "";
+            question.innerHTML = "";
+            answer.innerHTML = "";
+            numQuestions++; 
+            /* main part of program construct url 
+               fetch url then take the data.json 
+               and get the json.results. call helper function
+               triviaOut() to return the question and ansers to the user*/
+            const url = "https://opentdb.com/api.php?amount=1";
+            console.log(url)
+            fetch(url)
+                .then(function(data){
+                return data.json();
+            })
+            .then(function(json){ 
+                results = json.results;
+                triviaOut();
+ 
+            })
+            .catch(function(e){
+                 console.log("Error: " + e);
+            });
+        })
+        
+        
+       // helper functions 
+        
+        /* create the radio buttons with answers */
+        function makeRadioButton(id, name, value, labeltext) {
+
+            let label = document.createElement("label");
+            let radio = document.createElement("input");
+            radio.type = "radio";
+            radio.id = id; 
+            radio.name = name;
+            radio.value = value;
+
+            label.appendChild(radio);
+ 
+            label.appendChild(document.createTextNode(labeltext));
+            let newline = document.createElement('br');
+            label.appendChild(newline);  
+            return label;
+        }
+        
+        /*functioin to write out the triva question and 
+          and call function makeRadioButton() that will
+          create the radio buttons with answers  and then
+          create the submitButton*/
+        function triviaOut() {
+            console.log(results);
+            question.innerHTML = `<p><em>${results[0].question}</em></p>`;
+            
+            if (results[0].type === "boolean" ) {
+                let answer_button1 = makeRadioButton("answer1", "answer", results[0].correct_answer, /*results[0].correct_answer*/"True");
+                radio_home.appendChild(answer_button1);
+                
+                let answer_button2 = makeRadioButton("answer2", "answer", results[0].incorrect_answers[0], /*results[0].incorrect_answers[0]*/"False");
+                radio_home.appendChild(answer_button2);   
+            } else {
+                let answer_button1 = makeRadioButton("answer1", "answer", results[0].correct_answer, results[0].correct_answer);
+                radio_home.appendChild(answer_button1);
+                
+                let answer_button2 = makeRadioButton("answer2", "answer", results[0].incorrect_answers[0], results[0].incorrect_answers[0]);
+                radio_home.appendChild(answer_button2); 
+                
+                let answer_button3 = makeRadioButton("answer3", "answer", results[0].incorrect_answers[1], results[0].incorrect_answers[1]);
+                radio_home.appendChild(answer_button3);
+                
+                let answer_button4 = makeRadioButton("answer4", "answer", results[0].incorrect_answers[2], results[0].incorrect_answers[2]);
+                radio_home.appendChild(answer_button4);  
+
+            }
+          
+          const radioSubmit = document.getElementById("btnSubmit");
+          console.log(radioSubmit);
+              
+          if (radioSubmit != null){
+              radioSubmit.removeChild(radioSubmit); 
+              console.log(radioSubmit);
+            }  
+            
+        
+          let submitButton = document.createElement("INPUT");
+          submitButton.setAttribute("type", "submit");
+          submitButton.setAttribute("id", "btnSubmit");
+          submitButton.setAttribute("onclick","getRadioButton()");
+          radio_home.appendChild(submitButton); 
+          let newline = document.createElement('br');
+          radio_home.appendChild(newline);   
+        
+            
+             
+
+        }
+
+         function getRadioButton(){
+            const correctAnswer = results[0].correct_answer;
+            if ( document.querySelector('input[name="answer"]:checked') == null){  
+                out = "You have not selected any answer <br>";   
+            } else {
+                const userAnswer = document.querySelector('input[name="answer"]:checked').value;
+                console.log(correctAnswer);
+                console.log(userAnswer);
+                let result = userAnswer.localeCompare(correctAnswer); 
+                if ( result == 0) {
+                    out = "<h3>You are Correct</h3>";
+                    correstAnswers++;
+                }
+                 else {
+                     out = "<br/><br/><h3>Sorry that is incorrect</h3>";
+                     incorrestAnswers++;
+                 }
+            }
+                scoreSheet.innerHTML = "<br/><br/>Number of questions asked =" + numQuestions + "<br/>"+
+                                       "Correst Answers = " +correstAnswers + "<br/>"+
+                                       "Incorrest Answers = "+incorrestAnswers+ "<br/>";
+                answer.innerHTML = out; 
+                out = "";
+            
+        }   
+          
+
+        
+    </script>
+</body>
+</html>

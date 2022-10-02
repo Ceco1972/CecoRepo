@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Odin's Pithy Poodle Puns</title>
+    <style>
+        body
+        {
+            background-color: bisque;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        label
+        {
+            font-size: 1em;          
+        }
+
+        h1
+        {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            margin: auto;
+            border-top: 3px dashed red;
+            border-right: 3px dashed red;
+            border-left: 3px dashed red;
+            background-color: salmon;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            width: 20%;
+            font-size: 3em;
+            text-shadow: black 2px 2px 5px;
+        }
+
+        h2
+        {
+            font-size: .85em;
+            padding-bottom: 5px;
+            margin-bottom: 0; 
+            color: white; 
+        }
+     
+        h3
+        {
+            font-size: .85em;
+            padding: 10px;
+            margin: 0px auto 0px auto; 
+        }
+
+        h4
+        {
+            font-size: .85em;
+            padding: 15px;
+            margin: 10px auto 15px auto; 
+            background-color: salmon;
+            font-size: 1.5em;
+            color: white; 
+            width: 21%;
+            text-align: center;
+            border: 2px dashed red; 
+            text-shadow: black 2px 2px 5px;
+            box-shadow: black 2px 2px 10px;
+            z-index: 2;
+
+        }
+
+        button
+        {
+            width: 100%;
+            background-color: red;
+            color: white;
+            font-size: .55em;
+            border: 5px solid red;
+            margin: 10px auto 15px auto;
+            
+            box-shadow: black 2px 2px 5px;
+            
+
+        }
+
+        #output
+        {
+            margin: 10px;
+            margin: auto;
+            border: 3px dashed red;
+            background-color: salmon;
+            color: rgb(150 100 100);
+            padding: 15px;
+            text-align: left;
+            width: 20%;
+            height: 100%;
+            font-size: 1.5em;
+            z-index: 1;
+        }
+
+
+        form
+        {
+            margin-bottom: 2px dashed white;
+            z-index: 0;
+        }
+
+        input
+        {
+            color: rgb(250, 100, 100);
+
+        }
+
+    </style>
+  
+</head>
+
+<body>
+    <h1>Trivia Time<br/>
+    <button type="submit"id="getQuestion" style="margin-top: 20px;">Get a Question</button><br/><h4>Total Correct<br/><div id="total"></div></h4></h1>
+
+    <div id="output"></div>
+
+    <script>
+
+        let out = "";
+        let total = 0;
+        let outOf = 0;
+        document.getElementById("getQuestion").addEventListener("click", function(){
+
+            document.getElementById("output").innerHTML = "";
+            
+            
+            address = "https://opentdb.com/api.php?amount=1";
+
+        const url=address;
+        console.log(url);
+        
+        let x = 1;
+        let i = 0;
+        
+        
+            console.log(i)
+            fetch(url)
+            .then(function(data){
+                return data.json();
+            })
+            .then(function(jsonObject){
+                console.log(jsonObject);
+         
+                while (i < x) {    
+
+                console.log("value of i: " + i)
+                    let k = 0;
+                    for(results in jsonObject){
+                        const questionVariables = new Array(jsonObject.results[k].category,
+                            jsonObject.results[k].correct_answer, 
+                            jsonObject.results[k].incorrect_answers, jsonObject.results[k].question);
+                    console.log("Question Variables: " + questionVariables);
+                    k++;
+
+                        let cat = questionVariables[0];
+                        let q = questionVariables[3];
+                        let corr = questionVariables[1];
+                        let z = questionVariables[2].length;
+                        console.log("Log record for cat, q, corr, and z: " + cat, q, corr, z)
+
+                            let incorr1 = jsonObject.results[i].incorrect_answers[0];
+                            let incorr2 = jsonObject.results[i].incorrect_answers[1];
+                            let incorr3 = jsonObject.results[i].incorrect_answers[2];
+
+let answers = "Category: " + cat + "<br/><br/><span style=\"color: whitesmoke;\">Question: " 
+    + q + "</span><br/><br/><form id=\"form\">";
+                        
+        
+                        
+                            for (j=0; j < z; j++ ){
+                        
+                                incorr = "incorr" + (j+1);
+ answers += "<input type=\"radio\" id=\"optionQ"+ j +
+  "\" name=\"optionalAnswers\" value=\"false\">"+jsonObject.results[i].incorrect_answers[j]+"<br/>";
+                                
+                            }
+
+ answers += "<input type=\"radio\" id=\"optionQ"+ j 
+ + "\" name=\"optionalAnswers\" value=\"true\">" + corr+ "<br/>"
+
+                                answers += "</form><br/>";
+                        
+                                document.getElementById("output").innerHTML +=  answers;                    
+
+                                console.log("Answers variable: " + answers);
+                                i++;
+                                
+                                console.log("value of i at end of for-loop: " +i)
+
+                                const qoptions = document.getElementsByName("optionalAnswers");
+                                console.log(qoptions);
+                                
+                                //let r = 0; WAS TRYING TO USE A LOOP TO ALLOW USER TO TRY AGAIN IF THEY GOT THE WRONG ANSWER BUT COULD NOT GET IT TO WORK.
+                                //while( r < 1 ){
+                              
+                                    for(let t =0; t < qoptions.length; t++){
+                                        qoptions[t].addEventListener('click', function(){
+                                            console.log(qoptions.length);
+                                        
+                                        
+                                            //r = 1;
+                                            //RESPONSE IF SELECTED ANSWER IS CORRECT
+                                           if (this.value == "true"){
+document.getElementById("output").innerHTML += "<div style=\"background-color:
+ rgb(200 250 200); color: black; width: 80%; border: 2px dashed black; 
+ margin: auto; text-align: center;\"><h3>Correct</h3></div>";
+                                            console.log(this.id);
+                                            
+                                            let id1  =this.id;
+
+                                            total++
+                                            outOf++
+
+                                            document.getElementById("total").innerHTML = total + "/"+ outOf;
+                                            
+                                            console.log("Selected: " + this.id );
+                                            console.log("Total Correct: " + total); //RESPONSE IF INCORRECT ANSWER IS SELECTED
+                                        } else {
+                                            document.getElementById("output").innerHTML += "<div style=\"background-color: red; color: black; width: 80%; border: 2px dashed black; margin: auto; text-align: center;\"><h3>Incorrect</h3></div>";
+                                            console.log("Selected: " + this.id);
+                                            //r = 0;
+                                            outOf++;
+                                            document.getElementById("total").innerHTML = total + "/"+ outOf;
+                                        }
+                                        document.getElementById("getQuestion").innerHTML = "Get Another Question";
+
+                                        });
+                                    } 
+
+                             //  }
+                        }
+                        
+                    }
+               
+                  
+                })
+            
+    
+            })
+    </script>
+</body>
+</html>
+
+
