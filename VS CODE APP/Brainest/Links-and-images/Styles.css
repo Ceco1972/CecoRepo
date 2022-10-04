@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(Fonts/Roboto-Regular.ttf);
+}
+h1 {
+    font-size: 2em;
+    text-align: center;
+
+}
+.sec h1 {
+    text-align: left;
+    font-size: 1.5em;
+}
+ .black {
+    background-color: black;
+ }
+header img {
+    width: 60px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 130px;
+}
+header p {
+    font-size: 1em;
+    color: white;
+    margin-left: 55px;
+}
+header {
+    color: #111111;
+    display: flex;
+    margin-left: 150px;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+#div2{
+    margin-right: 240px;
+    margin-top: 20px;
+}
+
+ a:any-link {
+    margin-right: 10px;
+    color: white;
+}
+
+.sec{
+    display: flex;
+    justify-content:left;
+    gap: 50px;
+    color: white;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.black .sec img {
+    width: 400px;
+    height: 200px;
+    margin-bottom: 100px;
+}
+.sec img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+.sec button {
+    border-radius: 10%;
+    padding: 5px;
+    background-color: rgb(100, 100, 200);
+    color: white;
+    width: 100px;
+}
+article {
+    margin: 150px;
+    background-color: lightgrey;
+    padding: 200px;
+}
+.sec3{
+    text-align: center;
+}
+figure.item {
+    /* To correctly align image, regardless of content height: */
+    vertical-align: top;
+    display: inline-block;
+    /* To horizontally center images and caption */
+    text-align: center;
+    /* The width of the container also implies margin around the images. */
+    width: 120px;
+}
+img {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    border-radius: 10%;
+}
+.caption {
+    /* Make the caption a block so it occupies its own line. */
+    display: block;
+}
