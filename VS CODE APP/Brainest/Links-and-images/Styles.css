@@ -2,31 +2,46 @@
     font-family: 'Roboto';
     src: url(Fonts/Roboto-Regular.ttf);
 }
+body{
+    margin: 50px;
+}
 h1 {
-    font-size: 2em;
+    font-size: 36px;
     text-align: center;
+    font-weight: bolder;
+    color: #1f2937;
 
 }
 .sec h1 {
     text-align: left;
-    font-size: 1.5em;
+    font-size: 48px;
+    font-weight: bolder;
+    color: #f9faf8;
+    margin: 0px;
+}
+.sec p{
+    font-size: 18px;
+    color: #E5e7eb;
 }
  .black {
-    background-color: black;
+    background-color: #1F2937;
+    margin: 150px;
+ }
+ .blue {
+    background-color: blue;
  }
 header img {
     width: 60px;
     height: auto;
     margin-top: 20px;
-    margin-left: 130px;
 }
 header p {
-    font-size: 1em;
-    color: white;
-    margin-left: 55px;
+    font-size: 24px;
+    color: #f9faf8;
+    margin-left: 7px;
 }
 header {
-    color: #111111;
+    color: #1F2937;
     display: flex;
     margin-left: 150px;
     justify-content: space-between;
@@ -38,8 +53,10 @@ header {
 }
 
  a:any-link {
-    margin-right: 10px;
+    margin-top: 10px;
+    margin-right: 1px;
     color: white;
+    font-size: 18px;
 }
 
 .sec{
@@ -47,9 +64,10 @@ header {
     justify-content:left;
     gap: 50px;
     color: white;
-    margin-left: 200px;
+    margin-left: 150px;
     margin-right: 200px;
 }
+
 .black .sec img {
     width: 400px;
     height: 200px;
@@ -63,14 +81,40 @@ header {
 .sec button {
     border-radius: 10%;
     padding: 5px;
-    background-color: rgb(100, 100, 200);
+    background-color: #3882f6;
     color: white;
     width: 100px;
 }
+.sec1{
+    display: flex;
+    justify-content:left;
+    gap: 250px;
+    color: white;
+    background-color: #3882f6;;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-left: 50px;
+}
+.sec1 button {
+    margin-top: 30px;
+    border-radius: 10%;
+    padding: 5px;
+    width: 100px;
+    border: 1px solid white;
+    background-color: #3882f6;
+    color: white;
+
+}
 article {
-    margin: 150px;
-    background-color: lightgrey;
-    padding: 200px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #e5e7eb;
+    padding: 100px;
+    font-size: 36px;
+    font-style: italic;
+    color: #1f2937;
 }
 .sec3{
     text-align: center;
@@ -93,4 +137,15 @@ img {
 .caption {
     /* Make the caption a block so it occupies its own line. */
     display: block;
+}
+footer{
+    background-color: #1F2937;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+
+    
 }
